@@ -1,0 +1,57 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px); /* Bounce up */
+    }
+    50% {
+        transform: translateY(0); /* Return to normal */
+    }
+    75% {
+        transform: translateY(-5px); /* Bounce down */
+    }
+    100% {
+        transform: translateY(0); /* End position */
+    }
+}
+
+.centered-heading {
+    position: absolute;
+    top: 20px; /* Adjust top position to give some spacing from the very top */
+    left: 18%;
+    transform: translateX(-50%);
+    font-size: 5rem; /* You can adjust the font size */
+    color: #e80b0b; /* White color for the text */
+    padding: 5px 10px; /* Optional padding for spacing */
+    text-align: center; /* Center align the text */
+    font-family: 'Great Vibes', cursive; /* Choose your preferred font */
+    z-index: 20; /* Ensure it's on top of other elements */
+    opacity: 0; /* Start with the text hidden */
+    animation: fadeIn 5s ease-out forwards, bounce 3s ease infinite; /* Apply both animations */
+    animation-delay: 1s; /* Optional: delay before the fade-in starts */
+}
+
+/* Adjust font size for smaller screens */
+@media screen and (max-width: 768px) {
+    .centered-heading {
+        font-size: 4rem; /* Smaller font size on tablets */
+    }
+}
+
+/* Adjust font size for mobile screens */
+@media screen and (max-width: 480px) {
+    .centered-heading {
+        font-size: 3rem; /* Even smaller font size on mobile */
+        top: 15px; /* Adjust top position to give some space on smaller screens */
+    }
+}
